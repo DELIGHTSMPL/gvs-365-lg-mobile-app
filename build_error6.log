@@ -1,0 +1,150 @@
+﻿2026-07-29T12:45:31.6880239Z   ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+2026-07-29T12:45:31.6881543Z   â                 Welcome to Flutter! - https://flutter.dev                  â
+2026-07-29T12:45:31.6882517Z   â                                                                            â
+2026-07-29T12:45:31.6883591Z   â The Flutter tool uses Google Analytics to anonymously report feature usage â
+2026-07-29T12:45:31.6884999Z   â statistics and basic crash reports. This data is used to help improve      â
+2026-07-29T12:45:31.6886323Z   â Flutter tools over time.                                                   â
+2026-07-29T12:45:31.6887520Z   â                                                                            â
+2026-07-29T12:45:31.6888767Z   â Flutter tool analytics are not sent on the very first run. To disable      â
+2026-07-29T12:45:31.6889945Z   â reporting, type 'flutter config --no-analytics'. To display the current    â
+2026-07-29T12:45:31.6891047Z   â setting, type 'flutter config'. If you opt out of analytics, an opt-out    â
+2026-07-29T12:45:31.6892206Z   â event will be sent, and then no further information will be sent by the    â
+2026-07-29T12:45:31.6893307Z   â Flutter tool.                                                              â
+2026-07-29T12:45:31.6894204Z   â                                                                            â
+2026-07-29T12:45:31.6895831Z   â By downloading the Flutter SDK, you agree to the Google Terms of Service.  â
+2026-07-29T12:45:31.6896954Z   â The Google Privacy Policy describes how data is handled in this service.   â
+2026-07-29T12:45:31.6898130Z   â                                                                            â
+2026-07-29T12:45:31.6899380Z   â Moreover, Flutter includes the Dart SDK, which may send usage metrics and  â
+2026-07-29T12:45:31.6900698Z   â crash reports to Google.                                                   â
+2026-07-29T12:45:31.6901860Z   â                                                                            â
+2026-07-29T12:45:31.6903037Z   â Read about data we send with crash reports:                                â
+2026-07-29T12:45:31.6904528Z   â https://flutter.dev/docs/reference/crash-reporting                         â
+2026-07-29T12:45:31.6905888Z   â                                                                            â
+2026-07-29T12:45:31.6906986Z   â See Google's privacy policy:                                               â
+2026-07-29T12:45:31.6908357Z   â https://policies.google.com/privacy                                        â
+2026-07-29T12:45:31.6909400Z   â                                                                            â
+2026-07-29T12:45:31.6910327Z   â To disable animations in this tool, use                                    â
+2026-07-29T12:45:31.6911421Z   â 'flutter config --no-cli-animations'.                                      â
+2026-07-29T12:45:31.6912547Z   ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+2026-07-29T12:45:31.6913066Z 
+2026-07-29T12:45:37.3293414Z Resolving dependencies...
+2026-07-29T12:45:38.0377832Z Downloading packages...
+2026-07-29T12:45:39.3101960Z + async 2.11.0 (2.13.1 available)
+2026-07-29T12:45:39.3102607Z + boolean_selector 2.1.1 (2.1.2 available)
+2026-07-29T12:45:39.3103229Z + characters 1.3.0 (1.4.1 available)
+2026-07-29T12:45:39.3104308Z + clock 1.1.1 (1.1.2 available)
+2026-07-29T12:45:39.3104900Z + collection 1.18.0 (1.19.1 available)
+2026-07-29T12:45:39.3105551Z + cupertino_icons 1.0.8 (1.0.9 available)
+2026-07-29T12:45:39.3105904Z + fake_async 1.3.1 (1.3.3 available)
+2026-07-29T12:45:39.3106221Z + ffi 2.1.3 (2.2.0 available)
+2026-07-29T12:45:39.3106511Z + file 7.0.1
+2026-07-29T12:45:39.3106758Z + flutter 0.0.0 from sdk flutter
+2026-07-29T12:45:39.3107122Z + flutter_lints 3.0.2 (6.0.0 available)
+2026-07-29T12:45:39.3107459Z + flutter_test 0.0.0 from sdk flutter
+2026-07-29T12:45:39.3108119Z + flutter_web_plugins 0.0.0 from sdk flutter
+2026-07-29T12:45:39.3108483Z + http 1.6.0
+2026-07-29T12:45:39.3108740Z + http_parser 4.0.2 (4.1.2 available)
+2026-07-29T12:45:39.3109062Z + intl 0.19.0 (0.20.3 available)
+2026-07-29T12:45:39.3109370Z + leak_tracker 10.0.4 (11.0.2 available)
+2026-07-29T12:45:39.3109758Z + leak_tracker_flutter_testing 3.0.3 (3.0.10 available)
+2026-07-29T12:45:39.3110172Z + leak_tracker_testing 3.0.1 (3.0.2 available)
+2026-07-29T12:45:39.3110554Z + lints 3.0.0 (6.1.0 available)
+2026-07-29T12:45:39.3110854Z + matcher 0.12.16+1 (0.12.20 available)
+2026-07-29T12:45:39.3111213Z + material_color_utilities 0.8.0 (0.13.0 available)
+2026-07-29T12:45:39.3111584Z + meta 1.12.0 (1.19.0 available)
+2026-07-29T12:45:39.3111888Z + path 1.9.0 (1.9.1 available)
+2026-07-29T12:45:39.3112167Z + path_provider 2.1.5 (2.1.6 available)
+2026-07-29T12:45:39.3112467Z + path_provider_android 2.2.10 (2.3.1 available)
+2026-07-29T12:45:39.3112789Z + path_provider_foundation 2.4.1 (2.6.0 available)
+2026-07-29T12:45:39.3113130Z + path_provider_linux 2.2.1 (2.2.2 available)
+2026-07-29T12:45:39.3113468Z + path_provider_platform_interface 2.1.2 (2.1.3 available)
+2026-07-29T12:45:39.3113800Z + path_provider_windows 2.3.0
+2026-07-29T12:45:39.3114039Z + platform 3.1.6
+2026-07-29T12:45:39.3114253Z + plugin_platform_interface 2.1.8
+2026-07-29T12:45:39.3114524Z + shared_preferences 2.3.3 (2.5.5 available)
+2026-07-29T12:45:39.3114847Z + shared_preferences_android 2.3.2 (2.4.27 available)
+2026-07-29T12:45:39.3115398Z + shared_preferences_foundation 2.5.4 (2.5.6 available)
+2026-07-29T12:45:39.3115717Z + shared_preferences_linux 2.4.1
+2026-07-29T12:45:39.3116037Z + shared_preferences_platform_interface 2.4.1 (2.4.2 available)
+2026-07-29T12:45:39.3116389Z + shared_preferences_web 2.4.3
+2026-07-29T12:45:39.3116643Z + shared_preferences_windows 2.4.1
+2026-07-29T12:45:39.3116906Z + sky_engine 0.0.99 from sdk flutter
+2026-07-29T12:45:39.3117185Z + source_span 1.10.0 (1.10.2 available)
+2026-07-29T12:45:39.3117457Z + stack_trace 1.11.1 (1.12.1 available)
+2026-07-29T12:45:39.3117993Z + stream_channel 2.1.2 (2.1.4 available)
+2026-07-29T12:45:39.3118500Z + string_scanner 1.2.0 (1.4.1 available)
+2026-07-29T12:45:39.3119012Z + term_glyph 1.2.1 (1.2.2 available)
+2026-07-29T12:45:39.3119313Z + test_api 0.7.0 (0.7.13 available)
+2026-07-29T12:45:39.3119573Z + typed_data 1.3.2 (1.4.0 available)
+2026-07-29T12:45:39.3119837Z + vector_math 2.1.4 (2.4.1 available)
+2026-07-29T12:45:39.3120125Z + vm_service 14.2.1 (15.2.0 available)
+2026-07-29T12:45:39.3120376Z + web 1.1.1
+2026-07-29T12:45:39.3120566Z + xdg_directories 1.1.0
+2026-07-29T12:45:39.3120832Z Changed 51 dependencies!
+2026-07-29T12:45:39.3130038Z 37 packages have newer versions incompatible with dependency constraints.
+2026-07-29T12:45:39.3131030Z Try `flutter pub outdated` for more information.
+2026-07-29T12:45:39.5814455Z ##[group]Run flutter build apk --release
+2026-07-29T12:45:39.5814817Z [36;1mflutter build apk --release[0m
+2026-07-29T12:45:39.5860047Z shell: /usr/bin/bash -e {0}
+2026-07-29T12:45:39.5860292Z env:
+2026-07-29T12:45:39.5860603Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-29T12:45:39.5861132Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-29T12:45:39.5861629Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.22.0-x64/flutter
+2026-07-29T12:45:39.5862003Z   PUB_CACHE: /home/runner/.pub-cache
+2026-07-29T12:45:39.5862254Z ##[endgroup]
+2026-07-29T12:45:40.0279430Z 
+2026-07-29T12:45:40.0426847Z [!] Your app isn't using AndroidX.
+2026-07-29T12:45:40.0428497Z     To avoid potential build failures, you can quickly migrate your app by following the steps on https://goo.gl/CP92wY .
+2026-07-29T12:47:28.1206593Z Running Gradle task 'assembleRelease'...                        
+2026-07-29T12:47:28.1216244Z Error: unable to find directory entry in pubspec.yaml: /home/runner/work/gvs-365-lg-mobile-app/gvs-365-lg-mobile-app/assets/images/
+2026-07-29T12:47:30.0100369Z Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 6952 bytes (99.6% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+2026-07-29T12:47:57.3098577Z 
+2026-07-29T12:47:57.3104169Z FAILURE: Build failed with an exception.
+2026-07-29T12:47:57.3108741Z 
+2026-07-29T12:47:57.3109089Z * What went wrong:
+2026-07-29T12:47:57.3109972Z Execution failed for task ':app:processReleaseResources'.
+2026-07-29T12:47:57.3111210Z > A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
+2026-07-29T12:47:57.3112432Z    > Android resource linking failed
+2026-07-29T12:47:57.3114438Z      ERROR: /home/runner/work/gvs-365-lg-mobile-app/gvs-365-lg-mobile-app/build/app/intermediates/packaged_manifests/release/AndroidManifest.xml:17: AAPT: error: resource mipmap/ic_launcher (aka com.gvs365.lgautomation:mipmap/ic_launcher) not found.
+2026-07-29T12:47:57.3116314Z 
+2026-07-29T12:47:57.3118076Z      ERROR: /home/runner/work/gvs-365-lg-mobile-app/gvs-365-lg-mobile-app/android/app/src/main/AndroidManifest.xml:16:9-28:20: AAPT: error: resource style/LaunchTheme (aka com.gvs365.lgautomation:style/LaunchTheme) not found.
+2026-07-29T12:47:57.3119790Z 
+2026-07-29T12:47:57.3119952Z 
+2026-07-29T12:47:57.3120263Z * Try:
+2026-07-29T12:47:57.3120927Z > Run with --stacktrace option to get the stack trace.
+2026-07-29T12:47:57.3139422Z > Run with --info or --debug option to get more log output.
+2026-07-29T12:47:57.3168372Z > Run with --scan to get full insights.
+2026-07-29T12:47:57.3198363Z > Get more help at https://help.gradle.org.
+2026-07-29T12:47:57.3228064Z 
+2026-07-29T12:47:57.3228932Z BUILD FAILED in 2m 16s
+2026-07-29T12:47:57.7903518Z Running Gradle task 'assembleRelease'...                          137.7s
+2026-07-29T12:47:57.7947532Z Gradle task assembleRelease failed with exit code 1
+2026-07-29T12:47:57.8009324Z ##[error]Process completed with exit code 1.
+2026-07-29T12:47:57.8229036Z Post job cleanup.
+2026-07-29T12:47:57.8232991Z ##[start-action display=Cache pub dependencies;id=__cce311d3-f41b-4572-ae62-83a618a091e4.cache-pub]
+2026-07-29T12:47:57.8235142Z ##[end-action id=__cce311d3-f41b-4572-ae62-83a618a091e4.cache-pub;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-07-29T12:47:57.8237076Z ##[start-action display=Cache Flutter;id=__cce311d3-f41b-4572-ae62-83a618a091e4.cache-flutter]
+2026-07-29T12:47:57.8239750Z ##[end-action id=__cce311d3-f41b-4572-ae62-83a618a091e4.cache-flutter;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-07-29T12:47:57.8324515Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-29T12:47:57.8325765Z Post job cleanup.
+2026-07-29T12:47:57.9642515Z (node:3068) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-29T12:47:57.9643450Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-29T12:47:57.9804814Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-29T12:47:57.9806074Z Post job cleanup.
+2026-07-29T12:47:58.0701425Z [command]/usr/bin/git version
+2026-07-29T12:47:58.0744074Z git version 2.54.0
+2026-07-29T12:47:58.0784320Z Temporarily overriding HOME='/home/runner/work/_temp/3686a2df-7b38-4e11-b75f-28b47e43f4a1' before making global git config changes
+2026-07-29T12:47:58.0785619Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-29T12:47:58.0790621Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gvs-365-lg-mobile-app/gvs-365-lg-mobile-app
+2026-07-29T12:47:58.0830331Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-29T12:47:58.0865796Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-29T12:47:58.1186777Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-29T12:47:58.1225189Z http.https://github.com/.extraheader
+2026-07-29T12:47:58.1239551Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-07-29T12:47:58.1290946Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-29T12:47:58.1626792Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-29T12:47:58.1689510Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-29T12:47:58.2163083Z Cleaning up orphan processes
+2026-07-29T12:47:58.2519964Z Terminate orphan process: pid (2783) (java)
+2026-07-29T12:47:58.2581574Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
