@@ -223,7 +223,7 @@ class _AttendanceCheckInScreenState extends State<AttendanceCheckInScreen> {
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                   decoration: BoxDecoration(
-                                    color: Colors.black80,
+                                    color: Colors.black87,
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: const Text('ORIGINAL ARCHIVED', style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),

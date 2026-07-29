@@ -69,7 +69,7 @@ class _MainNavigationHolderState extends State<MainNavigationHolder> {
             _currentIndex = index;
           });
         },
-        activeColor: const Color(0xFFC4032A),
+        indicatorColor: const Color(0xFFFEE2E2),
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.dashboard_outlined),

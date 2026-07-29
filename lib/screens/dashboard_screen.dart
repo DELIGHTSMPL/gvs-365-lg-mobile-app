@@ -118,7 +118,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ? const Color(0xFFFFF1F2)
                             : _checkInStatus!.status == 'Checked In'
                                 ? Colors.green.shade50
-                                : Colors.slate.shade100,
+                                : Colors.grey.shade100,
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
                           color: _checkInStatus == null

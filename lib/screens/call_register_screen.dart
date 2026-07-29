@@ -235,7 +235,7 @@ class _CallRegisterScreenState extends State<CallRegisterScreen> {
                                         Expanded(
                                           child: Text(
                                             call.issueDescription,
-                                            style: const TextStyle(fontSize: 12, color: Colors.black80),
+                                            style: const TextStyle(fontSize: 12, color: Colors.black87),
                                           ),
                                         ),
                                       ],
