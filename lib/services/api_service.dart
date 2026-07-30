@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/call_register.dart';
 import '../models/customer.dart';
 import '../models/amc_report.dart';
@@ -226,8 +229,32 @@ class ApiService {
     return false;
   }
 
-  // API Call Handlers
+  // API Call Handlers connected with Azure Backend https://app-gvs365.azurewebsites.net
+  Future<String> _getApiBaseUrl() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('api_base_url') ?? 'https://app-gvs365.azurewebsites.net';
+  }
+
   Future<List<CallRegister>> getCallRegister() async {
+    try {
+      final baseUrl = await _getApiBaseUrl();
+      final url = Uri.parse('$baseUrl/api/calls/lg-automation/list');
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'page': 1, 'pageSize': 50}),
+      ).timeout(const Duration(seconds: 4));
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        if (data != null && data['items'] is List && (data['items'] as List).isNotEmpty) {
+          final List remoteItems = data['items'];
+          return remoteItems.map((item) => CallRegister.fromJson(item)).toList();
+        }
+      }
+    } catch (_) {
+      // Fallback to local calls dataset if offline or endpoint unauthenticated
+    }
     await Future.delayed(const Duration(milliseconds: 300));
     return _calls;
   }

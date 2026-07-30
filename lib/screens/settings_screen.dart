@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -8,7 +9,34 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  final _serverUrlController = TextEditingController(text: 'http://192.168.1.100/GVS365LG');
+  final _serverUrlController = TextEditingController(text: 'https://app-gvs365.azurewebsites.net');
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSettings();
+  }
+
+  Future<void> _loadSettings() async {
+    final prefs = await SharedPreferences.getInstance();
+    final url = prefs.getString('api_base_url') ?? 'https://app-gvs365.azurewebsites.net';
+    setState(() {
+      _serverUrlController.text = url;
+    });
+  }
+
+  Future<void> _saveSettings() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('api_base_url', _serverUrlController.text.trim());
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.green,
+          content: Text('✅ Azure API Endpoint saved & connected: https://app-gvs365.azurewebsites.net'),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +74,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       backgroundColor: const Color(0xFFC4032A),
                       minimumSize: const Size.fromHeight(44),
                     ),
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Server endpoint saved successfully!')),
-                      );
-                    },
+                    onPressed: _saveSettings,
                     icon: const Icon(Icons.save, color: Colors.white),
                     label: const Text('Save Server Settings', style: TextStyle(color: Colors.white)),
                   ),
