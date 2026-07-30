@@ -185,32 +185,54 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               ],
                             ),
                           ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: _checkInStatus == null
-                                  ? const Color(0xFFC4032A)
-                                  : _checkInStatus!.status == 'Checked In'
-                                      ? const Color(0xFF1E293B)
-                                      : Colors.green,
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                            ),
-                            onPressed: () async {
-                              if (_checkInStatus == null) {
-                                final res = await Navigator.push(context, MaterialPageRoute(builder: (context) => const AttendanceCheckInScreen()));
-                                if (res == true) _loadDashboardMetrics();
-                              } else if (_checkInStatus!.status == 'Checked In') {
-                                final res = await Navigator.push(context, MaterialPageRoute(builder: (context) => AttendanceCheckOutScreen(checkIn: _checkInStatus!)));
-                                if (res == true) _loadDashboardMetrics();
-                              }
-                            },
-                            child: Text(
-                              _checkInStatus == null
-                                  ? 'Check In'
-                                  : _checkInStatus!.status == 'Checked In'
-                                      ? 'Check Out'
-                                      : 'Done',
-                              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
-                            ),
+                          Column(
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: _checkInStatus == null
+                                      ? const Color(0xFFC4032A)
+                                      : _checkInStatus!.status == 'Checked In'
+                                          ? const Color(0xFF1E293B)
+                                          : Colors.green,
+                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                ),
+                                onPressed: () async {
+                                  if (_checkInStatus == null) {
+                                    final res = await Navigator.push(context, MaterialPageRoute(builder: (context) => const AttendanceCheckInScreen()));
+                                    if (res == true) _loadDashboardMetrics();
+                                  } else if (_checkInStatus!.status == 'Checked In') {
+                                    final res = await Navigator.push(context, MaterialPageRoute(builder: (context) => AttendanceCheckOutScreen(checkIn: _checkInStatus!)));
+                                    if (res == true) _loadDashboardMetrics();
+                                  }
+                                },
+                                child: Text(
+                                  _checkInStatus == null
+                                      ? 'Check In'
+                                      : _checkInStatus!.status == 'Checked In'
+                                          ? 'Check Out'
+                                          : 'Done',
+                                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
+                                ),
+                              ),
+                              if (_checkInStatus?.status == 'Checked In') ...[
+                                const SizedBox(height: 6),
+                                OutlinedButton.icon(
+                                  style: OutlinedButton.styleFrom(
+                                    foregroundColor: const Color(0xFFC4032A),
+                                    side: const BorderSide(color: Color(0xFFC4032A)),
+                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const RouteOptimizationScreen()),
+                                    );
+                                  },
+                                  icon: const Icon(Icons.flash_on, size: 14, color: Color(0xFFC4032A)),
+                                  label: const Text('Optimize Route', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+                                ),
+                              ],
+                            ],
                           ),
                         ],
                       ),

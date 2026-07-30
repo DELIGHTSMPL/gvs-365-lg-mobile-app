@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import '../models/attendance_checkin.dart';
 import '../services/api_service.dart';
 import '../services/ocr_service.dart';
+import 'route_optimization_screen.dart';
 
 class AttendanceCheckInScreen extends StatefulWidget {
   const AttendanceCheckInScreen({super.key});
@@ -87,10 +88,13 @@ class _AttendanceCheckInScreenState extends State<AttendanceCheckInScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           backgroundColor: Colors.green.shade800,
-          content: Text('✅ Check-In Logged! Morning Reading: $reading KM (Original Photo Archived).'),
+          content: Text('✅ Check-In Logged! Morning Reading: $reading KM. Opening Route Optimization...'),
         ),
       );
-      Navigator.pop(context, true);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const RouteOptimizationScreen()),
+      );
     }
   }
 
