@@ -9,6 +9,7 @@ import 'call_register_screen.dart';
 import 'customer_search_screen.dart';
 import 'amc_report_screen.dart';
 import 'job_sheet_screen.dart';
+import 'route_optimization_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -329,6 +330,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     const SizedBox(height: 12),
 
                     // Action Buttons List
+                    ListTile(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      tileColor: Colors.white,
+                      leading: const CircleAvatar(
+                        backgroundColor: Color(0xFFFEF2F2),
+                        child: Icon(Icons.alt_route, color: Color(0xFFC4032A)),
+                      ),
+                      title: const Text('Route Optimization & Maps', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFC4032A))),
+                      subtitle: const Text('AI priority sequence, Google Maps navigation, live status & KM fuel report'),
+                      trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Color(0xFFC4032A)),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const RouteOptimizationScreen()),
+                      ),
+                    ),
+                    const SizedBox(height: 8),
                     ListTile(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       tileColor: Colors.white,

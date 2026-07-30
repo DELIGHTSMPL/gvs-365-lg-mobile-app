@@ -10,7 +10,7 @@ class ApiService {
   factory ApiService() => _instance;
   ApiService._internal();
 
-  // Demo Mock Data for GVS 365 LG Automation
+  // Demo Mock Data for GVS 365 LG Automation with GPS & Route Metadata
   final List<CallRegister> _calls = [
     CallRegister(
       callId: 'LG-2026-101',
@@ -23,6 +23,15 @@ class ApiService {
       priority: 'High',
       callDate: DateTime.now().subtract(const Duration(hours: 3)),
       technicianName: 'Rajesh Kumar',
+      latitude: 23.0400,
+      longitude: 72.5300,
+      googleMapsUrl: 'https://maps.google.com/?q=23.0400,72.5300',
+      serviceType: 'Emergency Complaint',
+      timeSlot: '10:00 AM - 11:30 AM',
+      liveStatus: 'Travelling',
+      distanceKm: 4.2,
+      trafficEta: '12 mins',
+      priorityScore: 280.0,
     ),
     CallRegister(
       callId: 'LG-2026-102',
@@ -32,21 +41,60 @@ class ApiService {
       equipmentModel: 'LG Ductable Split Air Conditioner 5.0 TR',
       issueDescription: 'Scheduled quarterly preventive maintenance & filter clean',
       status: 'Pending',
-      priority: 'Medium',
+      priority: 'High',
       callDate: DateTime.now().subtract(const Duration(days: 1)),
-      technicianName: 'Vikram Patel',
+      technicianName: 'Rajesh Kumar',
+      latitude: 23.0650,
+      longitude: 72.5180,
+      googleMapsUrl: 'https://maps.google.com/?q=23.0650,72.5180',
+      serviceType: 'AMC Visit',
+      timeSlot: '10:00 AM - 12:00 PM',
+      liveStatus: 'Pending',
+      distanceKm: 6.8,
+      trafficEta: '18 mins',
+      priorityScore: 260.0,
     ),
     CallRegister(
       callId: 'LG-2026-103',
       customerName: 'Nexus Tech Park Office 401',
       contactNumber: '+91 99090 88776',
-      address: '4th Floor, Nexus Tower, Vastrapur',
+      address: '4th Floor, Nexus Tower, Vastrapur, Ahmedabad',
       equipmentModel: 'LG Dual Inverter Cassette AC 3.0 TR',
       issueDescription: 'Water leakage from indoor unit drain pan',
-      status: 'Completed',
-      priority: 'Low',
+      status: 'Pending',
+      priority: 'Medium',
       callDate: DateTime.now().subtract(const Duration(days: 2)),
-      technicianName: 'Amit Shah',
+      technicianName: 'Rajesh Kumar',
+      latitude: 23.0350,
+      longitude: 72.5250,
+      googleMapsUrl: 'https://maps.google.com/?q=23.0350,72.5250',
+      serviceType: 'Installation',
+      timeSlot: '02:00 PM - 04:00 PM',
+      liveStatus: 'Pending',
+      distanceKm: 3.5,
+      trafficEta: '10 mins',
+      priorityScore: 110.0,
+    ),
+    CallRegister(
+      callId: 'LG-2026-104',
+      customerName: 'Apex Healthcare Labs',
+      contactNumber: '+91 98980 33445',
+      address: 'Plot 45, Science City Road, Ahmedabad',
+      equipmentModel: 'LG Precision Air Conditioner 10 TR',
+      issueDescription: 'Annual Preventive Maintenance (PM Check)',
+      status: 'Pending',
+      priority: 'Low',
+      callDate: DateTime.now(),
+      technicianName: 'Rajesh Kumar',
+      latitude: 23.0800,
+      longitude: 72.5050,
+      googleMapsUrl: 'https://maps.google.com/?q=23.0800,72.5050',
+      serviceType: 'Preventive Service',
+      timeSlot: 'Flexible',
+      liveStatus: 'Pending',
+      distanceKm: 9.1,
+      trafficEta: '24 mins',
+      priorityScore: 40.0,
     ),
   ];
 
@@ -146,6 +194,7 @@ class ApiService {
   Future<bool> saveCustomerVisit(CustomerVisit visit) async {
     _customerVisits.insert(0, visit);
     await updateCallStatus(visit.callId, 'In-Progress');
+    await updateCallLiveStatus(visit.callId, 'Working');
     return true;
   }
 
@@ -171,6 +220,7 @@ class ApiService {
         status: 'Departed',
         routeWaypoints: old.routeWaypoints,
       );
+      await updateCallLiveStatus(old.callId, 'Completed');
       return true;
     }
     return false;
@@ -191,21 +241,60 @@ class ApiService {
     final index = _calls.indexWhere((c) => c.callId == callId);
     if (index != -1) {
       final old = _calls[index];
-      _calls[index] = CallRegister(
-        callId: old.callId,
-        customerName: old.customerName,
-        contactNumber: old.contactNumber,
-        address: old.address,
-        equipmentModel: old.equipmentModel,
-        issueDescription: old.issueDescription,
+      _calls[index] = old.copyWith(status: status);
+      return true;
+    }
+    return false;
+  }
+
+  Future<bool> updateCallLiveStatus(String callId, String liveStatus) async {
+    final index = _calls.indexWhere((c) => c.callId == callId);
+    if (index != -1) {
+      final old = _calls[index];
+      String status = old.status;
+      if (liveStatus == 'Completed') {
+        status = 'Completed';
+      } else if (liveStatus == 'Working' || liveStatus == 'Reached' || liveStatus == 'Travelling') {
+        status = 'In-Progress';
+      }
+      _calls[index] = old.copyWith(
+        liveStatus: liveStatus,
         status: status,
-        priority: old.priority,
-        callDate: old.callDate,
-        technicianName: old.technicianName,
       );
       return true;
     }
     return false;
+  }
+
+  Future<CallRegister?> autoAssignEmergencyCall() async {
+    final emergencyCall = CallRegister(
+      callId: 'LG-2026-999',
+      customerName: 'Emergency: Sterling Hospital ICU Ward',
+      contactNumber: '+91 99887 11223',
+      address: 'Drive-In Road, Memnagar, Ahmedabad',
+      equipmentModel: 'LG Modular Chiller System 50 TR',
+      issueDescription: 'CRITICAL: Chiller high pressure trip in Operation Theatre AC',
+      status: 'Pending',
+      priority: 'High',
+      callDate: DateTime.now(),
+      technicianName: 'Rajesh Kumar',
+      latitude: 23.0480,
+      longitude: 72.5280,
+      googleMapsUrl: 'https://maps.google.com/?q=23.0480,72.5280',
+      serviceType: 'Emergency Complaint',
+      timeSlot: 'IMMEDIATE',
+      liveStatus: 'Pending',
+      distanceKm: 2.1,
+      trafficEta: '6 mins',
+      priorityScore: 350.0,
+    );
+
+    // Add at index 0 if not already assigned
+    if (!_calls.any((c) => c.callId == emergencyCall.callId)) {
+      _calls.insert(0, emergencyCall);
+      return emergencyCall;
+    }
+    return null;
   }
 
   Future<List<Customer>> getCustomers() async {
@@ -227,6 +316,7 @@ class ApiService {
     _jobSheets.insert(0, sheet);
     // Automatically mark associated call as completed
     await updateCallStatus(sheet.callId, 'Completed');
+    await updateCallLiveStatus(sheet.callId, 'Completed');
     return true;
   }
 }

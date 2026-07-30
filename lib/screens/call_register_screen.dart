@@ -4,6 +4,7 @@ import '../services/api_service.dart';
 import '../widgets/status_badge.dart';
 import '../widgets/custom_search_bar.dart';
 import 'customer_visit_screen.dart';
+import 'route_optimization_screen.dart';
 
 class CallRegisterScreen extends StatefulWidget {
   const CallRegisterScreen({super.key});
@@ -144,6 +145,18 @@ class _CallRegisterScreenState extends State<CallRegisterScreen> {
         title: const Text('LG Call Register'),
         backgroundColor: const Color(0xFFC4032A),
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.alt_route),
+            tooltip: 'Optimize Route Today',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const RouteOptimizationScreen()),
+              );
+            },
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _showNewCallDialog,

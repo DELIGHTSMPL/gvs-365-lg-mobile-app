@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/call_register_screen.dart';
+import 'screens/route_optimization_screen.dart';
 import 'screens/customer_search_screen.dart';
 import 'screens/amc_report_screen.dart';
 import 'screens/settings_screen.dart';
@@ -49,6 +50,7 @@ class _MainNavigationHolderState extends State<MainNavigationHolder> {
 
   final List<Widget> _screens = const [
     DashboardScreen(),
+    RouteOptimizationScreen(),
     CallRegisterScreen(),
     CustomerSearchScreen(),
     AmcReportScreen(),
@@ -75,6 +77,11 @@ class _MainNavigationHolderState extends State<MainNavigationHolder> {
             icon: Icon(Icons.dashboard_outlined),
             selectedIcon: Icon(Icons.dashboard, color: Color(0xFFC4032A)),
             label: 'Dashboard',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.alt_route_outlined),
+            selectedIcon: Icon(Icons.alt_route, color: Color(0xFFC4032A)),
+            label: 'Route',
           ),
           NavigationDestination(
             icon: Icon(Icons.assignment_outlined),
